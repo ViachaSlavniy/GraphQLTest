@@ -1,7 +1,8 @@
 const express = require('express');
 const { graphqlHTTP } = require('express-graphql');
-const schema = require('./../schema/schema');
+const schema = require('../schema/schema');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const app = express();
 const PORT = 3005;
@@ -12,6 +13,8 @@ mongoose.connect("mongodb+srv://admin:test@cluster0.vv6hx.mongodb.net/GraphQLTes
 })
 
 // Первый параметр - Роут по которому будет работать GraphQL песочница
+
+app.use(cors());
 
 app.use('/graphql', graphqlHTTP({
     schema,

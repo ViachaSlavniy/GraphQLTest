@@ -11,7 +11,8 @@ import BlockIcon from '@material-ui/icons/Block';
 class DirectorsDialog extends React.Component {
 
   handleDelete = () => {
-    const { id, handleClose } = this.props;
+    const { id, handleClose, deleteDirector } = this.props;
+    deleteDirector(id)
     handleClose();
   }
 

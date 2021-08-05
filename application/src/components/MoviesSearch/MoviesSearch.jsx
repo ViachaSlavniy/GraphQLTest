@@ -7,7 +7,7 @@ import withHocs from './MoviesSearchHoc';
 class MoviesSearch extends React.Component {
 
   render() {
-    const { classes } = this.props;
+    const { classes, name, handleChange, handleSearch } = this.props;
 
     return (
       <div className={classes.search}>
@@ -16,6 +16,9 @@ class MoviesSearch extends React.Component {
         </div>
         <InputBase
           placeholder="Search…"
+          value={name}
+          onChange={handleChange('name')}
+          onKeyPress={(e) => handleSearch(e)}
           classes={{
             root: classes.inputRoot,
             input: classes.inputInput,

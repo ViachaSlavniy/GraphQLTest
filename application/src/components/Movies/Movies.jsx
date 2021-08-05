@@ -9,6 +9,7 @@ import withHocs from './MoviesHoc';
 
 class Movies extends React.Component {
   state = {
+    id: '',
     open: false,
     name: '',
     genre: '',
@@ -27,6 +28,7 @@ class Movies extends React.Component {
 
   handleClose = () => {
     this.setState({
+      id: '',
       name: '',
       genre: '',
       watched: false,
